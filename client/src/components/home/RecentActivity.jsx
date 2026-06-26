@@ -1,11 +1,23 @@
-import { MapPin, Clock } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import { MapPin, Clock } from "lucide-react";
 
-import { mockItems } from "../../data/mockItems";
+import { getItems } from "../../services/itemService";
 
 export default function RecentActivity() {
   const [activeTab, setActiveTab] = useState("lost");
+const [items, setItems] = useState([]);
+useEffect(() => {
+    fetchItems();
+}, []);
 
+const fetchItems = async () => {
+    try {
+        const data = await getItems();
+        setItems(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
   return (
     <section className="py-16 bg-gray-50/50">
       <div className="max-w-5xl mx-auto px-4">
@@ -42,7 +54,14 @@ export default function RecentActivity() {
 
         {/* Items Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {mockItems.map((item) => (
+          {items
+.filter(item =>
+    activeTab === "lost"
+        ? item.type === "Lost"
+        : item.type === "Found"
+)
+.slice(0,4)
+.map((item) => (
             <div
               key={item.id}
               className="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
@@ -50,18 +69,14 @@ export default function RecentActivity() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={item.title}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium text-gray-900">{item.name}</h3>
-                  {item.price && (
-                    <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded">
-                      {item.price}
-                    </span>
-                  )}
+                  <h3 className="text-sm font-medium text-gray-900">{item.title}</h3>
+        
                 </div>
                 <div className="flex items-center gap-1 text-xs text-gray-500 mb-1">
                   <MapPin className="w-3 h-3" />
@@ -69,7 +84,7 @@ export default function RecentActivity() {
                 </div>
                 <div className="flex items-center gap-1 text-xs text-gray-500">
                   <Clock className="w-3 h-3" />
-                  <span>{item.time}</span>
+                  <span>{item.date}</span>
                 </div>
               </div>
             </div>

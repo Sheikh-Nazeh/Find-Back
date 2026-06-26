@@ -1,8 +1,26 @@
 import { Search, MapPin } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import { getHomeStats } from "../../services/itemService";
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState("lost");
+  const [stats, setStats] = useState({
+    users: 0,
+    approved_items: 0,
+    resolved_items: 0,
+});
+useEffect(() => {
+    fetchStats();
+}, []);
+
+const fetchStats = async () => {
+    try {
+        const data = await getHomeStats();
+        setStats(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
 
   return (
     <section className="relative bg-gradient-to-b from-blue-50/50 to-white pt-16 pb-20">
@@ -64,12 +82,12 @@ export default function Hero() {
         {/* Stats */}
         <div className="flex items-center justify-center gap-8 md:gap-12">
           <div className="text-center">
-            <div className="text-2xl font-semibold text-gray-900">12,847</div>
+            <div className="text-2xl font-semibold text-gray-900">{stats.approved_items.toLocaleString()}</div>
             <div className="text-xs text-gray-500 mt-1">Items Reunited</div>
           </div>
           <div className="w-px h-10 bg-gray-200" />
           <div className="text-center">
-            <div className="text-2xl font-semibold text-gray-900">8,923</div>
+            <div className="text-2xl font-semibold text-gray-900">{stats.users.toLocaleString()}</div>
             <div className="text-xs text-gray-500 mt-1">Active Users</div>
           </div>
           <div className="w-px h-10 bg-gray-200" />

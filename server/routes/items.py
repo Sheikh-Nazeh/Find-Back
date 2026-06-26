@@ -99,6 +99,48 @@ def get_items():
 
     return items
 
+@items_bp.route("/items/<item_id>", methods=["GET"])
+def get_item(item_id):
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            id,
+            title,
+            description,
+            category,
+            item_type,
+            location,
+            reported_date,
+            image_url
+        FROM items
+        WHERE id = %s
+    """, (item_id,))
+
+    row = cur.fetchone()
+
+    cur.close()
+    conn.close()
+
+    if not row:
+        return {
+            "message": "Item not found"
+        }, 404
+
+    return {
+        "id": str(row[0]),
+        "title": row[1],
+        "description": row[2],
+        "category": row[3],
+        "item_type": row[4],
+        "location": row[5],
+        "reported_date": str(row[6]),
+        "image": row[7] or "https://placehold.co/600x400?text=No+Image"
+    }
+
+
 @items_bp.route("/admin/reports/pending", methods=["GET"])
 @jwt_required()
 def get_pending_reports():
@@ -261,4 +303,65 @@ def mark_resolved(item_id):
 
     return {
         "message": "Item marked as resolved"
+    }
+
+@items_bp.route("/admin/dashboard", methods=["GET"])
+@jwt_required()
+def dashboard():
+
+    claims = get_jwt()
+
+    if claims.get("role") != "admin":
+        return {"message": "Unauthorized"}, 403
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    # Users
+    cur.execute("""
+        SELECT COUNT(*)
+        FROM users
+    """)
+    users = cur.fetchone()[0]
+
+    # Total reports
+    cur.execute("""
+        SELECT COUNT(*)
+        FROM items
+    """)
+    reports = cur.fetchone()[0]
+
+    # Pending reports
+    cur.execute("""
+        SELECT COUNT(*)
+        FROM items
+        WHERE status='pending'
+    """)
+    pending_reports = cur.fetchone()[0]
+
+    # Pending claims
+    cur.execute("""
+        SELECT COUNT(*)
+        FROM claims
+        WHERE status='pending'
+    """)
+    pending_claims = cur.fetchone()[0]
+
+    # Resolved items
+    cur.execute("""
+        SELECT COUNT(*)
+        FROM items
+        WHERE status='resolved'
+    """)
+    resolved_items = cur.fetchone()[0]
+
+    cur.close()
+    conn.close()
+
+    return {
+        "users": users,
+        "reports": reports,
+        "pending_reports": pending_reports,
+        "pending_claims": pending_claims,
+        "resolved_items": resolved_items
     }

@@ -7,6 +7,8 @@ from routes.auth import auth_bp
 from routes.users import users_bp
 from routes.items import items_bp
 from routes.claims import claims_bp
+from routes.home import home_bp
+
 
 app = Flask(__name__)
 
@@ -20,6 +22,8 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(users_bp)
 app.register_blueprint(items_bp)
 app.register_blueprint(claims_bp)
+app.register_blueprint(home_bp)
+
 
 @app.route("/")
 def home():
