@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 from database.connection import get_db_connection
 
@@ -58,3 +58,91 @@ def create_item():
         "message": "Item submitted successfully",
         "item_id": str(item_id)
     }, 201
+
+@items_bp.route("/items", methods=["GET"])
+def get_items():
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            id,
+            title,
+            category,
+            item_type,
+            location,
+            reported_date,
+            image_url
+        FROM items
+        WHERE status = 'approved'
+        ORDER BY created_at DESC
+    """)
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    items = []
+
+    for row in rows:
+        items.append({
+            "id": str(row[0]),
+            "title": row[1],
+            "category": row[2],
+            "type": row[3].capitalize(),
+            "location": row[4],
+            "date": str(row[5]),
+            "image": row[6] or "https://placehold.co/600x400?text=No+Image"
+        })
+
+    return items
+
+@items_bp.route("/admin/reports/pending", methods=["GET"])
+@jwt_required()
+def get_pending_reports():
+
+    claims = get_jwt()
+
+    if claims.get("role") != "admin":
+        return {"message": "Unauthorized"}, 403
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            id,
+            title,
+            description,
+            category,
+            item_type,
+            location,
+            reported_date,
+            status
+        FROM items
+        WHERE status='pending'
+        ORDER BY created_at DESC
+    """)
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    reports = []
+
+    for row in rows:
+        reports.append({
+            "id": str(row[0]),
+            "title": row[1],
+            "description": row[2],
+            "category": row[3],
+            "item_type": row[4],
+            "location": row[5],
+            "reported_date": str(row[6]),
+            "status": row[7]
+        })
+
+    return reports

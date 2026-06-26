@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { createItem } from "../services/itemService";
 import {
   Search,
   ArrowLeft,
@@ -12,6 +13,40 @@ import {
 
 export default function ReportItem() {
   const [activeTab, setActiveTab] = useState("lost");
+  const [formData, setFormData] = useState({
+  title: "",
+  category: "Electronics",
+  location: "",
+  reported_date: "",
+  description: "",
+});
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await createItem({
+      title: formData.title,
+      description: formData.description,
+      category: formData.category,
+      item_type: activeTab,
+      location: formData.location,
+      reported_date: formData.reported_date,
+    });
+
+    alert("Item submitted successfully!");
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to submit item");
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -79,7 +114,10 @@ export default function ReportItem() {
               </button>
             </div>
 
-            <form className="space-y-5">
+            <form
+  className="space-y-5"
+  onSubmit={handleSubmit}
+>
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Item Name
@@ -92,10 +130,13 @@ export default function ReportItem() {
                   />
 
                   <input
-                    type="text"
-                    placeholder="e.g. iPhone 14 Pro"
-                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
-                  />
+  type="text"
+  name="title"
+  value={formData.title}
+  onChange={handleChange}
+  placeholder="e.g. iPhone 14 Pro"
+  className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
+/>
                 </div>
               </div>
 
@@ -104,7 +145,12 @@ export default function ReportItem() {
                   Category
                 </label>
 
-                <select className="w-full px-4 py-3 border border-gray-200 rounded-xl">
+                <select
+  name="category"
+  value={formData.category}
+  onChange={handleChange}
+  className="w-full px-4 py-3 border border-gray-200 rounded-xl"
+>
                   <option>Electronics</option>
                   <option>Wallet</option>
                   <option>Keys</option>
@@ -126,14 +172,17 @@ export default function ReportItem() {
                   />
 
                   <input
-                    type="text"
-                    placeholder={
-                      activeTab === "lost"
-                        ? "Where did you lose it?"
-                        : "Where did you find it?"
-                    }
-                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
-                  />
+  type="text"
+  name="location"
+  value={formData.location}
+  onChange={handleChange}
+  placeholder={
+    activeTab === "lost"
+      ? "Where did you lose it?"
+      : "Where did you find it?"
+  }
+  className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
+/>
                 </div>
               </div>
 
@@ -149,9 +198,12 @@ export default function ReportItem() {
                   />
 
                   <input
-                    type="date"
-                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
-                  />
+  type="date"
+  name="reported_date"
+  value={formData.reported_date}
+  onChange={handleChange}
+  className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl"
+/>
                 </div>
               </div>
 
@@ -167,10 +219,13 @@ export default function ReportItem() {
                   />
 
                   <textarea
-                    rows="4"
-                    placeholder="Describe the item..."
-                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl resize-none"
-                  />
+  rows="4"
+  name="description"
+  value={formData.description}
+  onChange={handleChange}
+  placeholder="Describe the item..."
+  className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl resize-none"
+/>
                 </div>
               </div>
 
