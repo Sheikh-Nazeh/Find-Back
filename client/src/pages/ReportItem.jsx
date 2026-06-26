@@ -8,7 +8,7 @@ import {
   MapPin,
   Calendar,
   FileText,
-  Upload,
+
 } from "lucide-react";
 
 export default function ReportItem() {
@@ -19,6 +19,7 @@ export default function ReportItem() {
   location: "",
   reported_date: "",
   description: "",
+  image_url: "",
 });
 const handleChange = (e) => {
   setFormData({
@@ -38,6 +39,7 @@ const handleSubmit = async (e) => {
       item_type: activeTab,
       location: formData.location,
       reported_date: formData.reported_date,
+      image_url: formData.image_url,
     });
 
     alert("Item submitted successfully!");
@@ -230,25 +232,20 @@ const handleSubmit = async (e) => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">
-                  Upload Image
-                </label>
+                <div>
+  <label className="block text-sm font-medium mb-2">
+    Image URL
+  </label>
 
-                <label className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center cursor-pointer hover:bg-gray-50">
-                  <Upload
-                    size={28}
-                    className="text-gray-400 mb-2"
-                  />
-
-                  <span className="text-sm text-gray-500">
-                    Click to upload an image
-                  </span>
-
-                  <input
-                    type="file"
-                    className="hidden"
-                  />
-                </label>
+  <input
+    type="text"
+    name="image_url"
+    value={formData.image_url}
+    onChange={handleChange}
+    placeholder="https://example.com/image.jpg"
+    className="w-full border border-gray-300 rounded-xl px-4 py-3"
+  />
+</div>
               </div>
 
               <button

@@ -19,6 +19,7 @@ def create_item():
     item_type = data.get("item_type")
     location = data.get("location")
     reported_date = data.get("reported_date")
+    image_url = data.get("image_url")
 
     conn = get_db_connection()
     cur = conn.cursor()
@@ -32,9 +33,10 @@ def create_item():
             item_type,
             location,
             reported_date,
+            image_url,
             status
         )
-        VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
         RETURNING id
     """, (
         user_id,
@@ -44,6 +46,7 @@ def create_item():
         item_type,
         location,
         reported_date,
+        image_url,
         "pending"
     ))
 
