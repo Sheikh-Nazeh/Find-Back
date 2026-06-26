@@ -9,12 +9,118 @@ Eye,
 EyeOff,
 ArrowLeft,
 } from "lucide-react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { loginUser, registerUser } from "../services/authService";
+import { AuthContext } from "../context/AuthContext";
+
 
 export default function Login() {
 const [activeTab, setActiveTab] = useState("signin");
 
 const [showPassword, setShowPassword] = useState(false);
+const navigate = useNavigate();
+
+const { login } = useContext(AuthContext);
+
+const [signInData, setSignInData] = useState({
+  email: "",
+  password: "",
+});
+
+const [signUpData, setSignUpData] = useState({
+  full_name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+});
+
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState("");
 const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+const handleSignInChange = (e) => {
+  setSignInData({
+    ...signInData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSignUpChange = (e) => {
+  setSignUpData({
+    ...signUpData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSignIn = async (e) => {
+  e.preventDefault();
+
+  try {
+    setLoading(true);
+    setError("");
+
+    const response = await loginUser(signInData);
+
+    login(response.user, response.token);
+
+    if (response.user.role === "admin") {
+  navigate("/admin");
+} else {
+  navigate("/");
+}
+  } catch (err) {
+    setError(
+      err.response?.data?.message ||
+      "Login failed"
+    );
+  } finally {
+    setLoading(false);
+  }
+};
+
+const handleSignUp = async (e) => {
+  e.preventDefault();
+
+  if (
+    signUpData.password !==
+    signUpData.confirmPassword
+  ) {
+    setError("Passwords do not match");
+    return;
+  }
+
+  try {
+    setLoading(true);
+    setError("");
+
+    await registerUser({
+      full_name: signUpData.full_name,
+      email: signUpData.email,
+      password: signUpData.password,
+    });
+
+    setSignUpData({
+  full_name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+});
+
+    alert("Registration successful");
+    
+
+    setActiveTab("signin");
+  } catch (err) {
+    setError(
+      err.response?.data?.message ||
+      "Registration failed"
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
 return ( <div className="min-h-screen bg-gray-50">
 {/* Header */} <header className="bg-white border-b border-gray-200"> <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"> <div className="flex items-center gap-4"> <Link
@@ -80,6 +186,12 @@ return ( <div className="min-h-screen bg-gray-50">
           </button>
         </div>
 
+        {error && (
+  <div className="mb-4 p-3 rounded-lg bg-red-100 text-red-700">
+    {error}
+  </div>
+)}
+
         {/* SIGN IN */}
         {activeTab === "signin" && (
           <>
@@ -91,7 +203,7 @@ return ( <div className="min-h-screen bg-gray-50">
               Enter your credentials to access your account
             </p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSignIn}>
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Email
@@ -104,7 +216,10 @@ return ( <div className="min-h-screen bg-gray-50">
                   />
 
                   <input
-                    type="email"
+  type="email"
+  name="email"
+  value={signInData.email}
+  onChange={handleSignInChange}
                     placeholder="your.email@example.com"
                     className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -133,6 +248,9 @@ return ( <div className="min-h-screen bg-gray-50">
 
                   <input
                     type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={signInData.password}
+                    onChange={handleSignInChange}
                     placeholder="Enter your password"
                     className="w-full pl-11 pr-11 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -161,11 +279,12 @@ return ( <div className="min-h-screen bg-gray-50">
               </div>
 
               <button
-                type="submit"
-                className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-800"
-              >
-                Sign In
-              </button>
+  type="submit"
+  disabled={loading}
+  className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-800 disabled:opacity-50"
+>
+  {loading ? "Signing In..." : "Sign In"}
+</button>
             </form>
           </>
         )}
@@ -181,7 +300,7 @@ return ( <div className="min-h-screen bg-gray-50">
               Sign up to start reporting items
             </p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSignUp}>
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Full Name
@@ -195,6 +314,9 @@ return ( <div className="min-h-screen bg-gray-50">
 
                   <input
                     type="text"
+                    name="full_name"
+                    value={signUpData.full_name}
+                    onChange={handleSignUpChange}
                     placeholder="John Doe"
                     className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -214,6 +336,9 @@ return ( <div className="min-h-screen bg-gray-50">
 
                   <input
                     type="email"
+                    name="email"
+                    value={signUpData.email}
+                    onChange={handleSignUpChange}
                     placeholder="your.email@example.com"
                     className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -233,6 +358,9 @@ return ( <div className="min-h-screen bg-gray-50">
 
                   <input
                     type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={signUpData.password}
+                    onChange={handleSignUpChange}
                     placeholder="Create a password"
                     className="w-full pl-11 pr-11 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -270,6 +398,9 @@ return ( <div className="min-h-screen bg-gray-50">
                         ? "text"
                         : "password"
                     }
+                    name="confirmPassword"
+                    value={signUpData.confirmPassword}
+                    onChange={handleSignUpChange}
                     placeholder="Confirm your password"
                     className="w-full pl-11 pr-11 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -302,11 +433,12 @@ return ( <div className="min-h-screen bg-gray-50">
               </div>
 
               <button
-                type="submit"
-                className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-800"
-              >
-                Create Account
-              </button>
+  type="submit"
+  disabled={loading}
+  className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-800 disabled:opacity-50"
+>
+  {loading ? "Creating Account..." : "Create Account"}
+</button>
             </form>
           </>
         )}

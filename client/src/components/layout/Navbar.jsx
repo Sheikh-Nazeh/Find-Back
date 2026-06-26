@@ -1,7 +1,10 @@
-import { Search } from "lucide-react";
+import { Search, UserCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Navbar() {
+  const { user } = useContext(AuthContext);
 return ( <nav className="bg-white border-b border-gray-100"> <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
     {/* Logo */}
@@ -37,21 +40,33 @@ return ( <nav className="bg-white border-b border-gray-100"> <div className="max
     </div>
 
     {/* Right Side */}
-    <div className="flex items-center gap-3">
-      <Link
-        to="/login"
-        className="text-sm text-gray-600 hover:text-gray-900"
-      >
-        Sign In
-      </Link>
+<div className="flex items-center gap-4">
 
-      <Link
-        to="/report"
-        className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition"
-      >
-        Report Item
-      </Link>
-    </div>
+  {user ? (
+    <Link
+      to="/profile"
+      className="text-gray-700 hover:text-gray-900"
+      title="Profile"
+    >
+      <UserCircle size={30} />
+    </Link>
+  ) : (
+    <Link
+      to="/login"
+      className="text-sm text-gray-600 hover:text-gray-900"
+    >
+      Sign In
+    </Link>
+  )}
+
+  <Link
+    to="/report"
+    className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition"
+  >
+    Report Item
+  </Link>
+
+</div>
   </div>
 </nav>
 );

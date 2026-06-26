@@ -1,9 +1,28 @@
 import Navbar from "../components/layout/Navbar";
 import ItemCard from "../components/items/ItemCard";
 
-import { items } from "../data/items";
+import { useEffect, useState } from "react";
+import { getItems } from "../services/itemService";
+
+
 
 export default function BrowseItems() {
+  const [items, setItems] = useState([]);
+
+useEffect(() => {
+  fetchItems();
+}, []);
+
+const fetchItems = async () => {
+  try {
+    const data = await getItems();
+    setItems(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
   return (
     <>
       <Navbar />
