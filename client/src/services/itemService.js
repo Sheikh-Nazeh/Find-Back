@@ -67,3 +67,15 @@ export const rejectReport = async (id) => {
     }
   );
 };
+
+export const getAllItems = async () => {
+  const token = localStorage.getItem("token");
+
+  const response = await api.get("/admin/items", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response.data;
+};

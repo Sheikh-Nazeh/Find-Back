@@ -240,3 +240,25 @@ def get_all_items():
         })
 
     return items
+
+@items_bp.route("/admin/items/<item_id>/resolved", methods=["PUT"])
+@jwt_required()
+def mark_resolved(item_id):
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE items
+        SET status='resolved'
+        WHERE id=%s
+    """, (item_id,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return {
+        "message": "Item marked as resolved"
+    }
