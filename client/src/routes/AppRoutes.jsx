@@ -6,6 +6,11 @@ import ItemDetails from "../pages/ItemDetails";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import ReportItem from "../pages/ReportItem";
+import Dashboard from "../components/admin/Dashboard";
+import ManageUsers from "../components/admin/ManageUsers";
+import ManageItems from "../components/admin/ManageItems";
+import ManageReports from "../components/admin/ManageReports";
+import ManageClaims from "../components/admin/ManageClaims";
 
 export default function AppRoutes() {
   return (
@@ -17,6 +22,11 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/report" element={<ReportItem />} />
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin/users" element={<ManageUsers />} />
+        <Route path="/admin/items" element={<ManageItems />} />
+        <Route path="/admin/reports" element={<ManageReports />} />
+        <Route path="/admin/claims" element={<ManageClaims />} />
       </Routes>
     </BrowserRouter>
   );
