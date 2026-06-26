@@ -38,3 +38,15 @@ export const updateProfile = async (profileData) => {
 
   return response.data;
 };
+
+export const getAllUsers = async () => {
+  const token = localStorage.getItem("token");
+
+  const response = await api.get("/admin/users", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response.data;
+};

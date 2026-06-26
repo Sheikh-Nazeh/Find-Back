@@ -10,18 +10,19 @@ export default function BrowseItems() {
   const [items, setItems] = useState([]);
 
 useEffect(() => {
+
+  const fetchItems = async () => {
+    try {
+      const data = await getItems();
+      setItems(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   fetchItems();
+
 }, []);
-
-const fetchItems = async () => {
-  try {
-    const data = await getItems();
-    setItems(data);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 
   return (
     <>

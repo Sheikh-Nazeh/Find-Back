@@ -29,6 +29,13 @@ export default function Profile() {
     phone: "",
   });
 
+useEffect(() => {
+
+  if (!user) {
+    navigate("/login");
+    return;
+  }
+
   const fetchProfile = async () => {
     try {
       const data = await getProfile();
@@ -44,15 +51,9 @@ export default function Profile() {
     }
   };
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-      return;
-    }
+  fetchProfile();
 
-    fetchProfile();
-
-  }, [user, navigate]);
+}, [user, navigate]);
 
 
   const handleSaveProfile = async () => {

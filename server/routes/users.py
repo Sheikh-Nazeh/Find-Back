@@ -76,3 +76,39 @@ def update_profile():
         "message": "Profile updated"
     }
 
+@users_bp.route("/admin/users", methods=["GET"])
+@jwt_required()
+def get_all_users():
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            id,
+            full_name,
+            email,
+            role,
+            created_at
+        FROM users
+        ORDER BY created_at DESC
+    """)
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    users = []
+
+    for row in rows:
+        users.append({
+            "id": str(row[0]),
+            "full_name": row[1],
+            "email": row[2],
+            "role": row[3],
+            "created_at": str(row[4]),
+        })
+
+    return users
+

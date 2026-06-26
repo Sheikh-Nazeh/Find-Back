@@ -37,3 +37,33 @@ export const getPendingReports = async () => {
 
   return response.data;
 };
+
+export const approveReport = async (id) => {
+
+  const token = localStorage.getItem("token");
+
+  return api.put(
+    `/admin/reports/${id}/approve`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+export const rejectReport = async (id) => {
+
+  const token = localStorage.getItem("token");
+
+  return api.put(
+    `/admin/reports/${id}/reject`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

@@ -146,3 +146,97 @@ def get_pending_reports():
         })
 
     return reports
+
+@items_bp.route("/admin/reports/<item_id>/approve", methods=["PUT"])
+@jwt_required()
+def approve_report(item_id):
+
+    claims = get_jwt()
+
+    if claims.get("role") != "admin":
+        return {"message": "Unauthorized"}, 403
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE items
+        SET status='approved'
+        WHERE id=%s
+    """, (item_id,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return {
+        "message": "Report approved"
+    }
+
+@items_bp.route("/admin/reports/<item_id>/reject", methods=["PUT"])
+@jwt_required()
+def reject_report(item_id):
+
+    claims = get_jwt()
+
+    if claims.get("role") != "admin":
+        return {"message": "Unauthorized"}, 403
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE items
+        SET status='rejected'
+        WHERE id=%s
+    """, (item_id,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return {
+        "message": "Report rejected"
+    }
+
+@items_bp.route("/admin/items", methods=["GET"])
+@jwt_required()
+def get_all_items():
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            id,
+            title,
+            category,
+            item_type,
+            location,
+            status,
+            created_at
+        FROM items
+        ORDER BY created_at DESC
+    """)
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    items = []
+
+    for row in rows:
+        items.append({
+            "id": str(row[0]),
+            "title": row[1],
+            "category": row[2],
+            "type": row[3],
+            "location": row[4],
+            "status": row[5],
+            "created_at": str(row[6]),
+        })
+
+    return items
