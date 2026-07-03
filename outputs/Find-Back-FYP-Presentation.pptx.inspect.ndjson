@@ -1,0 +1,215 @@
+{"kind":"deck","id":"pr/tcftrl","name":"Deck"}
+{"kind":"layout","layoutId":"947dce3b-22e4-4d14-8e8a-950db03508df","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"42013f36-11bc-49bb-ba68-7246a739dac0","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/fz87nb","slide":1,"title":"Final Year Project","textShapes":9}
+{"kind":"textbox","id":"sh/xs72x4na","slide":1,"text":"Final Year Project","textPreview":"Final Year Project","textChars":18,"textLines":1,"bbox":[42,42,360,28]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":1,"text":"Find Back","textPreview":"Find Back","textChars":9,"textLines":1,"bbox":[42,170,760,96]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":1,"text":"A web-based lost-and-found platform that helps users report, browse, claim, and resolve missing belongings through an admin-controlled workflow.","textPreview":"A web-based lost-and-found platform that helps users report, browse, claim, and resolve missing belongings through an admin-controlled wo...","textChars":144,"textLines":1,"bbox":[44,282,760,110]}
+{"kind":"shape","id":"sh/8z25kb6x","slide":1,"bbox":[900,92,260,450]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":1,"text":"Lost","textPreview":"Lost","textChars":4,"textLines":1,"bbox":[932,138,180,48]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":1,"text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[1018,226,70,60]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":1,"text":"Found","textPreview":"Found","textChars":5,"textLines":1,"bbox":[928,324,190,48]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":1,"text":"React + Flask + PostgreSQL","textPreview":"React + Flask + PostgreSQL","textChars":26,"textLines":1,"bbox":[42,610,520,34]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":1,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"notes","id":"nt/fz87nb","slide":1,"text":""}
+{"kind":"slide","id":"sl/jb0o2x","slide":2,"title":"Lost belongings need a trusted recovery path","textShapes":12}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":2,"text":"Lost belongings need a trusted recovery path","textPreview":"Lost belongings need a trusted recovery path","textChars":44,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":2,"text":"The project turns a scattered manual process into a searchable, moderated digital flow.","textPreview":"The project turns a scattered manual process into a searchable, moderated digital flow.","textChars":87,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":2,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[72,255,190,64]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":2,"text":"single place to publish lost and found reports","textPreview":"single place to publish lost and found reports","textChars":46,"textLines":1,"bbox":[72,323,220,52]}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[380,255,190,64]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":2,"text":"main actors: visitors, registered users, and admins","textPreview":"main actors: visitors, registered users, and admins","textChars":51,"textLines":1,"bbox":[380,323,220,52]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":2,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[688,255,190,64]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":2,"text":"tracked item states: pending, approved, claimed, rejected, resolved","textPreview":"tracked item states: pending, approved, claimed, rejected, resolved","textChars":67,"textLines":1,"bbox":[688,323,220,52]}
+{"kind":"shape","id":"sh/ytsvu9kn","slide":2,"bbox":[948,230,250,196]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":2,"text":"Core issue","textPreview":"Core issue","textChars":10,"textLines":1,"bbox":[972,252,190,30]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":2,"text":"Without moderation, reports can be unreliable. Without claims, found items do not have a clear owner-verification path.","textPreview":"Without moderation, reports can be unreliable. Without claims, found items do not have a clear owner-verification path.","textChars":119,"textLines":1,"bbox":[972,298,196,92]}
+{"kind":"notes","id":"nt/jb0o2x","slide":2,"text":""}
+{"kind":"slide","id":"sl/soj9cs","slide":3,"title":"The objectives focus on reporting, discovery, trust, and resolution","textShapes":16}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":3,"text":"The objectives focus on reporting, discovery, trust, and resolution","textPreview":"The objectives focus on reporting, discovery, trust, and resolution","textChars":67,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":3,"text":"Each objective maps directly to implemented screens and backend routes.","textPreview":"Each objective maps directly to implemented screens and backend routes.","textChars":71,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":3,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":3,"bbox":[72,238,248,276]}
+{"kind":"textbox","id":"sh/ulwval87","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[92,262,70,36]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":3,"text":"Report","textPreview":"Report","textChars":6,"textLines":1,"bbox":[92,314,180,34]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":3,"text":"Allow users to submit lost or found items with category, location, date, description, and image URL.","textPreview":"Allow users to submit lost or found items with category, location, date, description, and image URL.","textChars":100,"textLines":1,"bbox":[92,368,200,96]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":3,"bbox":[364,238,248,276]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[384,262,70,36]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":3,"text":"Browse","textPreview":"Browse","textChars":6,"textLines":1,"bbox":[384,314,180,34]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":3,"text":"Show approved items in a public item listing and detail page.","textPreview":"Show approved items in a public item listing and detail page.","textChars":61,"textLines":1,"bbox":[384,368,200,96]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":3,"bbox":[656,238,248,276]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[676,262,70,36]}
+{"kind":"textbox","id":"sh/wval87ed","slide":3,"text":"Claim","textPreview":"Claim","textChars":5,"textLines":1,"bbox":[676,314,180,34]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":3,"text":"Let authenticated users submit a claim message for found items.","textPreview":"Let authenticated users submit a claim message for found items.","textChars":63,"textLines":1,"bbox":[676,368,200,96]}
+{"kind":"shape","id":"sh/epkzupwb","slide":3,"bbox":[948,238,248,276]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[968,262,70,36]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":3,"text":"Moderate","textPreview":"Moderate","textChars":8,"textLines":1,"bbox":[968,314,180,34]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":3,"text":"Give admins approval tools for reports and claims before items change state.","textPreview":"Give admins approval tools for reports and claims before items change state.","textChars":76,"textLines":1,"bbox":[968,368,200,96]}
+{"kind":"notes","id":"nt/soj9cs","slide":3,"text":""}
+{"kind":"slide","id":"sl/9um505","slide":4,"title":"The system separates public discovery from protected actions","textShapes":12}
+{"kind":"textbox","id":"sh/7adsji5s","slide":4,"text":"The system separates public discovery from protected actions","textPreview":"The system separates public discovery from protected actions","textChars":60,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/wval87ed","slide":4,"text":"Visitors can explore approved items, while authenticated users and admins handle sensitive flows.","textPreview":"Visitors can explore approved items, while authenticated users and admins handle sensitive flows.","textChars":97,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":4,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":4,"bbox":[72,260,310,96]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":4,"text":"Visitor","textPreview":"Visitor","textChars":7,"textLines":1,"bbox":[90,276,274,28]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":4,"text":"Home statistics, categories, recent activity, browse approved items","textPreview":"Home statistics, categories, recent activity, browse approved items","textChars":67,"textLines":1,"bbox":[90,310,274,34]}
+{"kind":"shape","id":"sh/ed8bat47","slide":4,"bbox":[485,260,310,96]}
+{"kind":"textbox","id":"sh/7u54zido","slide":4,"text":"Registered user","textPreview":"Registered user","textChars":15,"textLines":1,"bbox":[503,276,274,28]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":4,"text":"Login, profile, report lost/found items, submit claims","textPreview":"Login, profile, report lost/found items, submit claims","textChars":54,"textLines":1,"bbox":[503,310,274,34]}
+{"kind":"shape","id":"sh/e9cvixcz","slide":4,"bbox":[898,260,310,96]}
+{"kind":"textbox","id":"sh/lwval87e","slide":4,"text":"Admin","textPreview":"Admin","textChars":5,"textLines":1,"bbox":[916,276,274,28]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":4,"text":"Dashboard, manage users, approve reports, approve claims","textPreview":"Dashboard, manage users, approve reports, approve claims","textChars":56,"textLines":1,"bbox":[916,310,274,34]}
+{"kind":"shape","id":"sh/3itgfmlk","slide":4,"bbox":[382,308,103,0]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":4,"bbox":[795,308,103,0]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":4,"text":"Access control","textPreview":"Access control","textChars":14,"textLines":1,"bbox":[72,475,240,32]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":4,"text":"JWT tokens protect report submission, profile access, claim submission, and admin endpoints. Admin-only features additionally check the user's role claim.","textPreview":"JWT tokens protect report submission, profile access, claim submission, and admin endpoints. Admin-only features additionally check the u...","textChars":154,"textLines":1,"bbox":[72,516,1000,50]}
+{"kind":"notes","id":"nt/9um505","slide":4,"text":""}
+{"kind":"slide","id":"sl/fhtw0z","slide":5,"title":"The architecture is a simple full-stack client-server design","textShapes":12}
+{"kind":"textbox","id":"sh/d8bat47y","slide":5,"text":"The architecture is a simple full-stack client-server design","textPreview":"The architecture is a simple full-stack client-server design","textChars":60,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":5,"text":"React handles the interface, Flask exposes REST routes, and PostgreSQL stores users, items, and claims.","textPreview":"React handles the interface, Flask exposes REST routes, and PostgreSQL stores users, items, and claims.","textChars":103,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":5,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/d0z61032","slide":5,"bbox":[72,250,300,170]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":5,"text":"React client","textPreview":"React client","textChars":12,"textLines":1,"bbox":[90,268,264,30]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":5,"text":"Vite app, React Router pages, Tailwind styling, Axios API service, localStorage auth state","textPreview":"Vite app, React Router pages, Tailwind styling, Axios API service, localStorage auth state","textChars":90,"textLines":1,"bbox":[90,306,264,100]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":5,"bbox":[490,250,300,170]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":5,"text":"Flask API","textPreview":"Flask API","textChars":9,"textLines":1,"bbox":[508,268,264,30]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":5,"text":"Blueprint routes for auth, users, items, claims, home stats, and admin dashboard","textPreview":"Blueprint routes for auth, users, items, claims, home stats, and admin dashboard","textChars":80,"textLines":1,"bbox":[508,306,264,100]}
+{"kind":"shape","id":"sh/0fepkzup","slide":5,"bbox":[908,250,300,170]}
+{"kind":"textbox","id":"sh/bulwval8","slide":5,"text":"PostgreSQL","textPreview":"PostgreSQL","textChars":10,"textLines":1,"bbox":[926,268,264,30]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":5,"text":"Persistent tables for users, item reports, claim requests, timestamps, roles, and status values","textPreview":"Persistent tables for users, item reports, claim requests, timestamps, roles, and status values","textChars":95,"textLines":1,"bbox":[926,306,264,100]}
+{"kind":"shape","id":"sh/tovahoza","slide":5,"bbox":[372,335,118,0]}
+{"kind":"shape","id":"sh/032lszqt","slide":5,"bbox":[790,335,118,0]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":5,"text":"HTTP JSON","textPreview":"HTTP JSON","textChars":9,"textLines":1,"bbox":[384,296,96,22]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":5,"text":"SQL","textPreview":"SQL","textChars":3,"textLines":1,"bbox":[800,296,96,22]}
+{"kind":"notes","id":"nt/fhtw0z","slide":5,"text":""}
+{"kind":"slide","id":"sl/g2756c","slide":6,"title":"The data model keeps reports and ownership claims separate","textShapes":12}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":6,"text":"The data model keeps reports and ownership claims separate","textPreview":"The data model keeps reports and ownership claims separate","textChars":58,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":6,"text":"Items can be reviewed independently before claims are evaluated against approved found items.","textPreview":"Items can be reviewed independently before claims are evaluated against approved found items.","textChars":93,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":6,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/crmhk3q5","slide":6,"bbox":[90,230,280,290]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":6,"text":"users","textPreview":"users","textChars":5,"textLines":1,"bbox":[108,248,244,30]}
+{"kind":"textbox","id":"sh/ulwval87","slide":6,"text":"id\nfull_name\nemail\npassword_hash\nphone\nrole\ncreated_at","textPreview":"id | full_name | email | password_hash | phone | role | created_at","textChars":54,"textLines":7,"bbox":[108,286,244,220]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":6,"bbox":[500,210,300,330]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":6,"text":"items","textPreview":"items","textChars":5,"textLines":1,"bbox":[518,228,264,30]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":6,"text":"id\nuser_id\ntitle, description\ncategory, item_type\nlocation, reported_date\nimage_url\nstatus, created_at","textPreview":"id | user_id | title, description | category, item_type | location, reported_date | image_url | status, created_at","textChars":102,"textLines":7,"bbox":[518,266,264,260]}
+{"kind":"shape","id":"sh/z61032ls","slide":6,"bbox":[930,250,260,250]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":6,"text":"claims","textPreview":"claims","textChars":6,"textLines":1,"bbox":[948,268,224,30]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":6,"text":"id\nitem_id\nclaimant_id\nmessage\nstatus\ncreated_at","textPreview":"id | item_id | claimant_id | message | status | created_at","textChars":48,"textLines":6,"bbox":[948,306,224,180]}
+{"kind":"shape","id":"sh/a9w3m94f","slide":6,"bbox":[370,375,130,0]}
+{"kind":"shape","id":"sh/zupwb2hw","slide":6,"bbox":[370,375,560,0]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":6,"bbox":[800,375,130,0]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":6,"text":"reports","textPreview":"reports","textChars":7,"textLines":1,"bbox":[390,284,90,22]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":6,"text":"submits","textPreview":"submits","textChars":7,"textLines":1,"bbox":[810,354,90,22]}
+{"kind":"notes","id":"nt/g2756c","slide":6,"text":""}
+{"kind":"slide","id":"sl/a03na0","slide":7,"title":"Report moderation protects the public item listing","textShapes":15}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":7,"text":"Report moderation protects the public item listing","textPreview":"Report moderation protects the public item listing","textChars":50,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":7,"text":"New reports are stored as pending until an admin approves or rejects them.","textPreview":"New reports are stored as pending until an admin approves or rejects them.","textChars":74,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/z61032ls","slide":7,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/h0fepkzu","slide":7,"bbox":[58,298,230,96]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":7,"text":"User submits report","textPreview":"User submits report","textChars":19,"textLines":1,"bbox":[76,314,194,28]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":7,"text":"Lost or found form sends item data with JWT token","textPreview":"Lost or found form sends item data with JWT token","textChars":49,"textLines":1,"bbox":[76,348,194,34]}
+{"kind":"shape","id":"sh/obm58z25","slide":7,"bbox":[337,298,230,96]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":7,"text":"Backend creates item","textPreview":"Backend creates item","textChars":20,"textLines":1,"bbox":[355,314,194,28]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":7,"text":"POST /items inserts record with status = pending","textPreview":"POST /items inserts record with status = pending","textChars":48,"textLines":1,"bbox":[355,348,194,34]}
+{"kind":"shape","id":"sh/4nap4r65","slide":7,"bbox":[616,298,230,96]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":7,"text":"Admin reviews","textPreview":"Admin reviews","textChars":13,"textLines":1,"bbox":[634,314,194,28]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":7,"text":"Pending reports appear in Manage Reports","textPreview":"Pending reports appear in Manage Reports","textChars":40,"textLines":1,"bbox":[634,348,194,34]}
+{"kind":"shape","id":"sh/twra5gbq","slide":7,"bbox":[895,298,230,96]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":7,"text":"Approved item appears","textPreview":"Approved item appears","textChars":21,"textLines":1,"bbox":[913,314,194,28]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":7,"text":"GET /items returns only approved public records","textPreview":"GET /items returns only approved public records","textChars":47,"textLines":1,"bbox":[913,348,194,34]}
+{"kind":"shape","id":"sh/m58z25kb","slide":7,"bbox":[288,346,49,0]}
+{"kind":"shape","id":"sh/tsvu9kni","slide":7,"bbox":[567,346,49,0]}
+{"kind":"shape","id":"sh/47y1kre1","slide":7,"bbox":[846,346,49,0]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":7,"bbox":[378,456,144,34]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":7,"text":"pending","textPreview":"pending","textChars":7,"textLines":1,"bbox":[390,463,120,18]}
+{"kind":"shape","id":"sh/yxobm58z","slide":7,"bbox":[936,456,144,34]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":7,"text":"approved","textPreview":"approved","textChars":8,"textLines":1,"bbox":[948,463,120,18]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":7,"bbox":[752,456,144,34]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":7,"text":"rejected","textPreview":"rejected","textChars":8,"textLines":1,"bbox":[764,463,120,18]}
+{"kind":"notes","id":"nt/a03na0","slide":7,"text":""}
+{"kind":"slide","id":"sl/m59sa2","slide":8,"title":"The claim workflow adds verification before an item is marked claimed","textShapes":14}
+{"kind":"textbox","id":"sh/1032lszq","slide":8,"text":"The claim workflow adds verification before an item is marked claimed","textPreview":"The claim workflow adds verification before an item is marked claimed","textChars":69,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":8,"text":"A claimant explains ownership, and admin approval updates both claim and item state.","textPreview":"A claimant explains ownership, and admin approval updates both claim and item state.","textChars":84,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/judg7ads","slide":8,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/1orytsvu","slide":8,"bbox":[70,250,250,96]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":8,"text":"Browse found item","textPreview":"Browse found item","textChars":17,"textLines":1,"bbox":[88,266,214,28]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":8,"text":"User opens an approved found-item detail page","textPreview":"User opens an approved found-item detail page","textChars":45,"textLines":1,"bbox":[88,300,214,34]}
+{"kind":"shape","id":"sh/cvixczed","slide":8,"bbox":[380,250,250,96]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":8,"text":"Submit claim","textPreview":"Submit claim","textChars":12,"textLines":1,"bbox":[398,266,214,28]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":8,"text":"POST /claims stores item_id, claimant_id, and message","textPreview":"POST /claims stores item_id, claimant_id, and message","textChars":53,"textLines":1,"bbox":[398,300,214,34]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":8,"bbox":[690,250,250,96]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":8,"text":"Admin evaluates","textPreview":"Admin evaluates","textChars":15,"textLines":1,"bbox":[708,266,214,28]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":8,"text":"Manage Claims shows pending claimant messages","textPreview":"Manage Claims shows pending claimant messages","textChars":45,"textLines":1,"bbox":[708,300,214,34]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":8,"bbox":[1000,250,220,96]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":8,"text":"Resolve status","textPreview":"Resolve status","textChars":14,"textLines":1,"bbox":[1018,266,184,28]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":8,"text":"Approve marks claim approved and item claimed","textPreview":"Approve marks claim approved and item claimed","textChars":45,"textLines":1,"bbox":[1018,300,184,34]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":8,"bbox":[320,298,60,0]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":8,"bbox":[630,298,60,0]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":8,"bbox":[940,298,60,0]}
+{"kind":"shape","id":"sh/orytsvu9","slide":8,"bbox":[385,430,510,88]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":8,"text":"Important design choice","textPreview":"Important design choice","textChars":23,"textLines":1,"bbox":[408,448,250,26]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":8,"text":"Claims are not auto-approved. This reduces false ownership and gives admins a control point before status changes.","textPreview":"Claims are not auto-approved. This reduces false ownership and gives admins a control point before status changes.","textChars":114,"textLines":1,"bbox":[408,480,450,28]}
+{"kind":"notes","id":"nt/m59sa2","slide":8,"text":""}
+{"kind":"slide","id":"sl/m7to51","slide":9,"title":"The implementation uses familiar web technologies with clear responsibilities","textShapes":14}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":9,"text":"The implementation uses familiar web technologies with clear responsibilities","textPreview":"The implementation uses familiar web technologies with clear responsibilities","textChars":77,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":9,"text":"The stack is lightweight enough for an FYP but covers real authentication, persistence, and moderation.","textPreview":"The stack is lightweight enough for an FYP but covers real authentication, persistence, and moderation.","textChars":103,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":9,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/judg7ads","slide":9,"bbox":[86,210,1080,54]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":9,"text":"Frontend","textPreview":"Frontend","textChars":8,"textLines":1,"bbox":[112,223,190,24]}
+{"kind":"textbox","id":"sh/1032lszq","slide":9,"text":"React 19, Vite, React Router, Tailwind CSS, Lucide icons","textPreview":"React 19, Vite, React Router, Tailwind CSS, Lucide icons","textChars":56,"textLines":1,"bbox":[328,223,780,24]}
+{"kind":"shape","id":"sh/udg7adsj","slide":9,"bbox":[86,284,1080,54]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":9,"text":"API layer","textPreview":"API layer","textChars":9,"textLines":1,"bbox":[112,297,190,24]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":9,"text":"Axios service functions mapped to REST endpoints","textPreview":"Axios service functions mapped to REST endpoints","textChars":48,"textLines":1,"bbox":[328,297,780,24]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":9,"bbox":[86,358,1080,54]}
+{"kind":"textbox","id":"sh/d8bat47y","slide":9,"text":"Backend","textPreview":"Backend","textChars":7,"textLines":1,"bbox":[112,371,190,24]}
+{"kind":"textbox","id":"sh/knih4byh","slide":9,"text":"Flask 3, Blueprints, Flask-CORS, Flask-JWT-Extended","textPreview":"Flask 3, Blueprints, Flask-CORS, Flask-JWT-Extended","textChars":51,"textLines":1,"bbox":[328,371,780,24]}
+{"kind":"shape","id":"sh/vu9knih4","slide":9,"bbox":[86,432,1080,54]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":9,"text":"Security","textPreview":"Security","textChars":8,"textLines":1,"bbox":[112,445,190,24]}
+{"kind":"textbox","id":"sh/d0z61032","slide":9,"text":"bcrypt password hashing and JWT role claims","textPreview":"bcrypt password hashing and JWT role claims","textChars":43,"textLines":1,"bbox":[328,445,780,24]}
+{"kind":"shape","id":"sh/kf6dcbul","slide":9,"bbox":[86,506,1080,54]}
+{"kind":"textbox","id":"sh/vixczed8","slide":9,"text":"Database","textPreview":"Database","textChars":8,"textLines":1,"bbox":[112,519,190,24]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":9,"text":"PostgreSQL through psycopg2 and DATABASE_URL configuration","textPreview":"PostgreSQL through psycopg2 and DATABASE_URL configuration","textChars":58,"textLines":1,"bbox":[328,519,780,24]}
+{"kind":"notes","id":"nt/m7to51","slide":9,"text":""}
+{"kind":"slide","id":"sl/ugozhe","slide":10,"title":"The prototype demonstrates the core recovery cycle, with room to mature","textShapes":10}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":10,"text":"The prototype demonstrates the core recovery cycle, with room to mature","textPreview":"The prototype demonstrates the core recovery cycle, with room to mature","textChars":71,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":10,"text":"For an FYP evaluation, the main evidence is functional coverage across user and admin scenarios.","textPreview":"For an FYP evaluation, the main evidence is functional coverage across user and admin scenarios.","textChars":96,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":10,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":10,"text":"What works","textPreview":"What works","textChars":10,"textLines":1,"bbox":[90,220,300,34]}
+{"kind":"textbox","id":"sh/z61032ls","slide":10,"text":"- Users can register and log in\n- Reports move through pending and approved states\n- Approved items are publicly browsable\n- Claims can be submitted and moderated\n- Admin dashboard summarizes system activity","textPreview":"- Users can register and log in | - Reports move through pending and approved states | - Approved items are publicly browsable | - Claims...","textChars":207,"textLines":5,"bbox":[90,278,470,180]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":10,"text":"Current limitations","textPreview":"Current limitations","textChars":19,"textLines":1,"bbox":[710,220,360,34]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":10,"text":"- Search input is present but not yet wired to filtering\n- Image handling relies on URLs instead of uploads\n- Some admin routes depend on token presence but need stricter role checks\n- No automated test suite is included yet","textPreview":"- Search input is present but not yet wired to filtering | - Image handling relies on URLs instead of uploads | - Some admin routes depen...","textChars":224,"textLines":4,"bbox":[710,278,440,160]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":10,"bbox":[90,510,1060,56]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":10,"text":"Evaluation focus","textPreview":"Evaluation focus","textChars":16,"textLines":1,"bbox":[118,526,210,24]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":10,"text":"Demonstrate the complete journey: report item -> admin approval -> browse item -> claim submission -> admin claim decision.","textPreview":"Demonstrate the complete journey: report item -> admin approval -> browse item -> claim submission -> admin claim decision.","textChars":123,"textLines":1,"bbox":[330,526,740,24]}
+{"kind":"notes","id":"nt/ugozhe","slide":10,"text":""}
+{"kind":"slide","id":"sl/gc3v3h","slide":11,"title":"Find Back provides a strong base for a campus or community recovery system","textShapes":14}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":11,"text":"Find Back provides a strong base for a campus or community recovery system","textPreview":"Find Back provides a strong base for a campus or community recovery system","textChars":74,"textLines":1,"bbox":[42,40,880,116]}
+{"kind":"textbox","id":"sh/lwval87e","slide":11,"text":"The next step is to improve discovery, evidence quality, notifications, and deployment readiness.","textPreview":"The next step is to improve discovery, evidence quality, notifications, and deployment readiness.","textChars":97,"textLines":1,"bbox":[42,156,900,54]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":11,"text":"Find Back FYP","textPreview":"Find Back FYP","textChars":13,"textLines":1,"bbox":[42,668,240,24]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1184,668,54,24]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":11,"bbox":[78,238,495,126]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":11,"text":"Smarter search","textPreview":"Smarter search","textChars":14,"textLines":1,"bbox":[100,254,300,44]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":11,"text":"Keyword, category, type, location, and date filters.","textPreview":"Keyword, category, type, location, and date filters.","textChars":52,"textLines":1,"bbox":[100,302,430,50]}
+{"kind":"shape","id":"sh/3ex0nuxc","slide":11,"bbox":[653,238,495,126]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":11,"text":"Image upload","textPreview":"Image upload","textChars":12,"textLines":1,"bbox":[675,254,300,44]}
+{"kind":"textbox","id":"sh/knih4byh","slide":11,"text":"Store uploaded item photos instead of depending on external image URLs.","textPreview":"Store uploaded item photos instead of depending on external image URLs.","textChars":71,"textLines":1,"bbox":[675,302,430,50]}
+{"kind":"shape","id":"sh/d8bat47y","slide":11,"bbox":[78,396,495,126]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":11,"text":"Notifications","textPreview":"Notifications","textChars":13,"textLines":1,"bbox":[100,412,300,44]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":11,"text":"Alert users when reports are approved or claims change status.","textPreview":"Alert users when reports are approved or claims change status.","textChars":62,"textLines":1,"bbox":[100,460,430,50]}
+{"kind":"shape","id":"sh/kf6dcbul","slide":11,"bbox":[653,396,495,126]}
+{"kind":"textbox","id":"sh/d0z61032","slide":11,"text":"Testing and deployment","textPreview":"Testing and deployment","textChars":22,"textLines":1,"bbox":[675,412,300,44]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":11,"text":"Add automated API tests and deploy client, API, and database.","textPreview":"Add automated API tests and deploy client, API, and database.","textChars":61,"textLines":1,"bbox":[675,460,430,50]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":11,"text":"Core takeaway","textPreview":"Core takeaway","textChars":13,"textLines":1,"bbox":[86,585,200,28]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":11,"text":"The project proves the main lost-and-found workflow and creates a clean foundation for richer matching and real-world deployment.","textPreview":"The project proves the main lost-and-found workflow and creates a clean foundation for richer matching and real-world deployment.","textChars":129,"textLines":1,"bbox":[300,585,780,34]}
+{"kind":"notes","id":"nt/gc3v3h","slide":11,"text":""}

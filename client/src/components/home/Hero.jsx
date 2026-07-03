@@ -1,9 +1,13 @@
 import { Search, MapPin } from 'lucide-react';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getHomeStats } from "../../services/itemService";
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState("lost");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const navigate = useNavigate();
   const [stats, setStats] = useState({
     users: 0,
     approved_items: 0,
@@ -20,6 +24,24 @@ const fetchStats = async () => {
     } catch (error) {
         console.error(error);
     }
+};
+
+const handleSearch = (e) => {
+    e.preventDefault();
+
+    const params = new URLSearchParams();
+
+    if (searchTerm.trim()) {
+        params.set("q", searchTerm.trim());
+    }
+
+    if (location.trim()) {
+        params.set("location", location.trim());
+    }
+
+    params.set("type", activeTab);
+
+    navigate(`/browse?${params.toString()}`);
 };
 
   return (
@@ -57,11 +79,16 @@ const fetchStats = async () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 max-w-2xl mx-auto mb-10">
+        <form
+          onSubmit={handleSearch}
+          className="flex flex-col md:flex-row items-center justify-center gap-3 max-w-2xl mx-auto mb-10"
+        >
           <div className="flex items-center flex-1 w-full bg-white border border-gray-200 rounded-lg px-4 py-3">
             <Search className="w-4 h-4 text-gray-400 mr-3" />
             <input
               type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="What are you looking for?"
               className="flex-1 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
             />
@@ -70,14 +97,19 @@ const fetchStats = async () => {
             <MapPin className="w-4 h-4 text-gray-400 mr-3" />
             <input
               type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               placeholder="Location"
               className="flex-1 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
             />
           </div>
-          <button className="w-full md:w-auto px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800">
+          <button
+            type="submit"
+            className="w-full md:w-auto px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800"
+          >
             Search
           </button>
-        </div>
+        </form>
 
         {/* Stats */}
         <div className="flex items-center justify-center gap-8 md:gap-12">
